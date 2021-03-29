@@ -16,12 +16,15 @@ def getNewBoard():
                 board[x].append("~")
             else : 
                 board[x].append("`")
+    return board 
     # 즉, board[0]은 []이므로 ! 여기에 ~'이거를 15개 더한다 ! 이렇게 새로줄을 총 60개를 만든다 ! 에에 
 def getRandomChests(numChests): #보물상자의 위치를 결정 ! 
     #보물상자 데이터 구조를 리스트로 만든다.(보물상자는 x,y 좌표로 된 리스트이다 ! ).
     chests=[]
-    for i in range(numChests):
-        chests.append([random.randint(0,59),random.randint(0,14)]) #[2,4]와 같은 x,y좌표를 3개 만든다 = 보물상자 위치 ! 
+    while len(chests) <numChests:
+        newChests = [random.randint(0,59), random.randint(0,14)] 
+        if newChests not in chests: 
+            chests.append(newChests) 
     return chests
 
 def drawBoard(board):
