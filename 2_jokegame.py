@@ -4,3 +4,4 @@ print("Fro")
 print()
 print("?")
 input()
+print(" hi my name is hui chan ! ")'Q' 
